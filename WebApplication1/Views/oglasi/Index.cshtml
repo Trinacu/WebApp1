@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication1.ogla>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cilj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strosek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_oseb)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cilj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strosek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_oseb)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OglasID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OglasID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OglasID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="oglasiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="oglas">
+          <Key>
+            <PropertyRef Name="OglasID" />
+          </Key>
+          <Property Name="OglasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="start" Type="nvarchar" MaxLength="50" />
+          <Property Name="cilj" Type="nvarchar" MaxLength="50" />
+          <Property Name="cas" Type="time" Precision="7" />
+          <Property Name="strosek" Type="int" />
+          <Property Name="opis" Type="nvarchar" MaxLength="200" />
+          <Property Name="st_oseb" Type="int" />
+        </EntityType>
+        <EntityContainer Name="oglasiModelStoreContainer">
+          <EntitySet Name="oglas" EntityType="Self.oglas" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="oglasiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ogla">
+          <Key>
+            <PropertyRef Name="OglasID" />
+          </Key>
+          <Property Name="OglasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="start" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cilj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cas" Type="Time" Precision="7" />
+          <Property Name="strosek" Type="Int32" />
+          <Property Name="opis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="st_oseb" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="oglasiContext2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="oglas" EntityType="Self.ogla" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="oglasiModelStoreContainer" CdmEntityContainer="oglasiContext2">
+          <EntitySetMapping Name="oglas">
+            <EntityTypeMapping TypeName="oglasiModel.ogla">
+              <MappingFragment StoreEntitySet="oglas">
+                <ScalarProperty Name="OglasID" ColumnName="OglasID" />
+                <ScalarProperty Name="start" ColumnName="start" />
+                <ScalarProperty Name="cilj" ColumnName="cilj" />
+                <ScalarProperty Name="cas" ColumnName="cas" />
+                <ScalarProperty Name="strosek" ColumnName="strosek" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="st_oseb" ColumnName="st_oseb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

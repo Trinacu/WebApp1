@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="oglasiModelStoreContainer" CdmEntityContainer="oglasiContext2">
+    <EntitySetMapping Name="oglas">
+      <EntityTypeMapping TypeName="oglasiModel.ogla">
+        <MappingFragment StoreEntitySet="oglas">
+          <ScalarProperty Name="OglasID" ColumnName="OglasID" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="cilj" ColumnName="cilj" />
+          <ScalarProperty Name="cas" ColumnName="cas" />
+          <ScalarProperty Name="strosek" ColumnName="strosek" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="st_oseb" ColumnName="st_oseb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

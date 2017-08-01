@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="oglasiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ogla">
+    <Key>
+      <PropertyRef Name="OglasID" />
+    </Key>
+    <Property Name="OglasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="start" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cilj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cas" Type="Time" Precision="7" />
+    <Property Name="strosek" Type="Int32" />
+    <Property Name="opis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="st_oseb" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="oglasiContext2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="oglas" EntityType="Self.ogla" />
+  </EntityContainer>
+</Schema>
